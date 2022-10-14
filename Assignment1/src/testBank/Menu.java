@@ -3,17 +3,20 @@ import java.util.Scanner;
 
 public class Menu
 {
+    // creates a new bank and initializes scanner
     Scanner console = new Scanner(System.in);
     Bank bank = new Bank();
 
     public void runMenu()
     {
+        // calles printHeader and printMenu methods
         printHeader();
         printMenu();
     }
 
     public void printHeader()
     {
+        // prints basic window
         System.out.println("+-------------------------------+");
         System.out.println("|        Welcome to CS121.1     |");
         System.out.println("|          Banking App          |");
@@ -23,6 +26,7 @@ public class Menu
 
     public void printMenu()
     {
+        // iterates through selection options. Keeps going through the options until user exits
         while (true)
         {
             String selection;
@@ -53,6 +57,12 @@ public class Menu
 
     public void accessAccount()
     {
+        // access account by pin
+        // if pin invalid, return null
+        // else it asks which account they would like to access
+        // then asks the account number of the account they are accessing
+        // then asks if they are depositing or withdrawing
+        // then asks amount to deposit/withdraw
         Account account;
         System.out.println("Please enter your PIN:");
         String pin = console.nextLine();
@@ -105,6 +115,8 @@ public class Menu
 
     public Customer createNewCustomer()
     {
+        // creates a new customer
+        // receives first name, last name, and pin from user input
         String firstName;
         String lastName;
         String pin;
@@ -122,6 +134,12 @@ public class Menu
 
     public void createNewAccount()
     {
+        // creates new account
+        // asks if new customer
+        // if yes, it leads to the createNewCustomer method
+        // if no, it enters if pin is correct and asks which account to access
+        // asks whether they would like to make an initial deposit
+        // opens the new account upon accepting the initial deposit amount
         String newCustomer;
         String accountType;
         Customer customer;
